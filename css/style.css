@@ -24,12 +24,14 @@ body {
 }
 
 .todo {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(42, 73, 227, 0.845);
   width: 400px;
   min-height: 200px;
+  min-width: 400px;
   padding: 1em;
 }
 .todo-title {
@@ -45,10 +47,17 @@ body {
   margin-top: 0.5em;
   border: 1px solid black;
 }
-.todo__content-text {
+.todo__content-box {
+  display: flex;
   font-size: 1.8rem;
 }
 .todo__content-btns .btn {
   cursor: pointer;
   padding: 0.1em 0.2em;
+}
+.todo__content-btns-addEdit {
+  position: absolute;
+  top: 61px;
+  right: 32px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

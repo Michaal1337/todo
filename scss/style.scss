@@ -9,16 +9,23 @@ body {
 }
 
 .todo {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: rgba(42, 73, 227, 0.845);
 	width: 400px;
 	min-height: 200px;
+	min-width: 400px;
 	padding: 1em;
 	&-title {
 		margin: 0.7em 0;
 	}
+
+	&__action {
+		
+	}
+
 	&__content {
 		// background-color: green;
 		min-width: 250px;
@@ -30,19 +37,23 @@ body {
 			border: 1px solid black;
 			// background-color: blue;
 		}
-		&-text {
+		&-box {
+			display: flex;
 			font-size: 1.8rem;
-			
 		}
-		&-btns{
+		&-btns {
 			.btn {
 				cursor: pointer;
 				padding: 0.1em 0.2em;
 			}
 			// &-edit {}
 			// &-delete {}
-
+			&-addEdit {
+				position: absolute;
+				top: 61px;
+				right: 32px;
+				cursor: pointer;
+			}
 		}
-	} 
-	
+	}
 }
