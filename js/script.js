@@ -1,6 +1,7 @@
 const input = document.querySelector('.todo__action-input')
 const addEdit = document.querySelector('.todo__action-addEdit')
 const content = document.querySelector('.todo__content')
+const addBtn = document.querySelector('.todo__action-add')
 let count = 1
 
 function createElements() {
@@ -38,13 +39,22 @@ function check(e) {
 	if (e.target.matches('.todo__action-add')) {
 		createElements()
 	} else if (e.target.matches('.todo__content-btns-edit')) {
-		input.value = e.target.parentElement.previousElementSibling.lastElementChild.innerText
-		e.target.nextElementSibling.nextElementSibling.style.zIndex = '1'
+		input.value = e.target.parentElement.
+		previousElementSibling.lastElementChild.innerText
+
+		e.target.nextElementSibling.nextElementSibling.style.display = 'inline-block'
+		addBtn.style.display = 'none'
+
 	} else if (e.target.matches('.todo__content-btns-addEdit')) {
 		e.target.parentElement.previousElementSibling.lastElementChild.textContent = input.value
 		input.value = ''
+
+		addBtn.style.display = 'inline-block'
+		console.log(e.target);
+		e.target.style.display = 'none'
 	} else if (e.target.matches('.todo__content-btns-delete')) {
 		e.target.parentElement.parentElement.remove()
+		addBtn.style.display = 'inline-block'
 		if (content.children.length < 1) {
 			count = 1
 		}
